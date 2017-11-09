@@ -29,7 +29,7 @@ EXPOSE 8153 8154
 ENV LANG=en_US.utf8
 
 ARG UID=1000330000
-ARG GID=1000330000
+ARG GID=1000
 
 RUN \
 # add our user and group first to make sure their IDs get assigned consistently,
