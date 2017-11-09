@@ -58,4 +58,6 @@ RUN chown -R go:go /go-server
 
 # ENTRYPOINT ["/docker-entrypoint.sh"]
 
+ENTRYPOINT ["/bin/bash"]
+
 USER go
