@@ -28,14 +28,16 @@ EXPOSE 8153 8154
 # force encoding
 ENV LANG=en_US.utf8
 
-ARG UID=1000330000
-ARG GID=1000
+# ARG UID=1000330000
+# ARG GID=1000
 
 RUN \
 # add our user and group first to make sure their IDs get assigned consistently,
 # regardless of whatever dependencies get added
-  addgroup -g ${GID} go && \
-  adduser -D -u ${UID} -G go go && \
+  # addgroup -g ${GID} go && \
+  # adduser -D -u ${UID} -G go go && \
+  addgroup go && \
+  adduser -D -G go go && \
 # install dependencies and other helpful CLI tools
   apk --no-cache upgrade && \
   apk add --no-cache openjdk8-jre-base git mercurial subversion tini openssh-client bash su-exec curl && \
