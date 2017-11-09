@@ -52,7 +52,9 @@ COPY logback-include.xml /go-server/config/logback-include.xml
 
 ADD docker-entrypoint.sh /
 
-RUN chown -R go:go /go-server 
+RUN mkdir /go-server/logs
+
+RUN chown -R go:go /go-server/logs
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
